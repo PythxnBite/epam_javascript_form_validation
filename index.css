@@ -1,0 +1,31 @@
+.logo {
+	width: 40px;
+	height: auto;
+}
+
+.close {
+	color: white;
+}
+
+.vl {
+	border: 0.5px solid #ddd;
+	width: 100%;
+}
+.vl-innertext {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	border: 1px solid white;
+	border-radius: 50%;
+	padding: 8px 10px;
+	color: rgb(195, 195, 195);
+	left: 50%;
+}
+
+.textBox {
+	background-position: 98%;
+	background-repeat: no-repeat;
+	padding: 5%;
+	background-size: 25px;
+	opacity: 0.5;
+}
