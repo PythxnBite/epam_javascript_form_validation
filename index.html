@@ -8,7 +8,7 @@
 			content="width=device-width, initial-scale=1, shrink-to-fit=no"
 		/>
 
-		<link rel="stylesheet" type="text/css" href="./index.css" />
+		<title>Sign in</title>
 
 		<!-- Bootstrap CSS -->
 		<link
@@ -17,68 +17,69 @@
 			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 			crossorigin="anonymous"
 		/>
+
+		<link rel="stylesheet" type="text/css" href="./index.css" />
+
 		<!-- Font Awesome icon kit -->
 		<script
 			src="https://kit.fontawesome.com/7a6554f01b.js"
 			crossorigin="anonymous"
 		></script>
-
-		<title>Sign in</title>
 	</head>
-	<body>
-		<div>
-			<div
-				class="d-flex p-2 mb-2 border-bottom"
-				style="background-color: #38d9df; color: white;"
+	<body onload="loginForm.reset(); signupForm.reset()">
+		<nav class="navbar navbar-dark header">
+			<img
+				src="./assets/epam.jpg"
+				class="img-fluid mr-auto logo"
+				alt="EPAM logo"
+			/>
+			<h4
+				class="align-self-center font-weight-bold"
+				style="color: white;"
 			>
-				<img
-					src="./assets/epam.jpg"
-					class="img-fluid mr-auto logo"
-					alt="EPAM logo"
-				/>
-				<h4
-					class="align-self-center font-weight-bold"
-					style="color: white;"
-				>
-					Sign In
-				</h4>
-				<!-- <img class="close ml-auto" src="./assets/times-solid.svg" /> -->
-				<span class="close ml-auto align-self-center mr-1">
-					<i class="fas fa-times"></i
-				></span>
-			</div>
-			<div
-				class="container p-5 d-flex flex-column justify-content-center"
-			>
-				<div class="input-group d-flex flex-column align-items-center">
-					<input
-						type="text"
-						class="form-control textBox mt-3 mb-3"
-						placeholder="mail@example.com"
-						aria-label="Email"
-						aria-describedby="basic-addon1"
-						style="
-							background-image: url(./assets/envelope-solid.svg);
-						"
-					/>
-					<input
-						type="password"
-						class="form-control textBox mt-3 mb-3"
-						placeholder="password"
-						aria-label="Password"
-						aria-describedby="basic-addon2"
-						style="
-							background-image: url(./assets/unlock-solid.svg);
-							background-size: 22px;
-						"
-					/>
+				Sign In
+			</h4>
+			<span class="close ml-auto" style="color: white;">
+				<i class="fas fa-times"></i
+			></span>
+		</nav>
+		<div class="container p-5 d-flex flex-column justify-content-center">
+			<div class="login-section">
+				<form novalidate class="login-form" id="loginForm">
+					<div class="form-group">
+						<label for="login-email-id">Email Id</label>
+						<input
+							required
+							id="login-email-id"
+							type="email"
+							placeholder="mail@example.com"
+						/>
+						<small class="msg-error"
+							>Please enter a valid Email address</small
+						>
+					</div>
+					<div class="form-group">
+						<label for="login-password">Password</label>
+						<input
+							required
+							id="login-password"
+							type="password"
+							placeholder="password"
+						/>
+						<small class="msg-error"
+							>Please enter a password of length between 4 and
+							12</small
+						>
+					</div>
+
 					<button
-						type="button"
-						class="btn btn-success w-100 mt-3 mb-3 font-weight-bold"
+						type="submit"
+						class="btn btn-success w-100 font-weight-bold"
 					>
 						SIGN IN
 					</button>
-				</div>
+				</form>
+				<!-- </div> -->
 				<div class="vl mt-4 mb-4">
 					<span class="vl-innertext font-weight-bold">OR</span>
 				</div>
@@ -107,8 +108,81 @@
 						<i class="fas fa-greater-than"></i>
 					</button>
 				</div>
+				<div style="text-align: center; margin-top: 5%;">
+					Not Registered?
+					<button onclick="signup()" class="btn btn-primary show">
+						Sign up
+					</button>
+				</div>
+			</div>
+
+			<div class="signup-section hide">
+				<form novalidate class="signup-form" id="signupForm">
+					<div class="form-group">
+						<label for="signup-email-id">Email Id</label>
+						<input
+							required
+							id="signup-email-id"
+							type="email"
+							placeholder="mail@example.com"
+						/>
+						<small class="msg-error"
+							>Please enter a valid Email address</small
+						>
+					</div>
+					<div class="form-group">
+						<label for="signup-password">Password</label>
+						<input
+							required
+							id="signup-password"
+							type="password"
+							placeholder="password"
+						/>
+						<small class="msg-error"
+							>Please enter a password of length between 4 and
+							12</small
+						>
+					</div>
+					<div class="form-group">
+						<label for="password">Confirm Password</label>
+						<input
+							required
+							id="c-password"
+							type="password"
+							placeholder="confirm password"
+						/>
+						<small class="msg-error">Passwords do not match</small>
+					</div>
+					<div class="form-group">
+						<label for="password">Mobile Number</label>
+						<input
+							required
+							id="mob-no"
+							type="text"
+							placeholder="Mobile Number"
+						/>
+						<small class="msg-error"
+							>Please enter a valid mobile number of 10
+							digits</small
+						>
+					</div>
+					<button
+						type="submit"
+						class="btn btn-success w-100 font-weight-bold"
+					>
+						SIGN UP
+					</button>
+				</form>
+				<div style="text-align: center; margin-top: 5%;">
+					Already Registered?
+					<button onclick="login()" class="btn btn-primary show">
+						Login
+					</button>
+				</div>
 			</div>
 		</div>
+
+		<script src="./index.js" type="text/javascript"></script>
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->

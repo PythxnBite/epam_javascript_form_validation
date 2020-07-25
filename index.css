@@ -1,10 +1,18 @@
-.logo {
-	width: 40px;
-	height: auto;
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+body {
+	background: #eee;
 }
 
-.close {
-	color: white;
+.header {
+	background-color: #38d9df;
+}
+
+.logo {
+	width: 40px;
+}
+
+.hide {
+	display: none;
 }
 
 .vl {
@@ -14,18 +22,50 @@
 .vl-innertext {
 	position: absolute;
 	transform: translate(-50%, -50%);
-	background-color: white;
-	border: 1px solid white;
+	background-color: #eee;
+	border: 1px solid #eee;
 	border-radius: 50%;
 	padding: 8px 10px;
 	color: rgb(195, 195, 195);
 	left: 50%;
 }
 
-.textBox {
-	background-position: 98%;
-	background-repeat: no-repeat;
-	padding: 5%;
-	background-size: 25px;
-	opacity: 0.5;
+input[type='text'],
+input[type='password'],
+input[type='number'],
+input[type='email'] {
+	padding: 12px;
+	font-size: 14px;
+	width: 100%;
+	background: #fff;
+	border: 2px solid #ccc;
+	border-radius: 3px;
+	outline: none;
+	transition: all 0.3s;
+}
+input:focus {
+	border-color: #38d9df;
+}
+
+input[type='email'].valid,
+input[type='password'].valid,
+input[type='text'].valid,
+input[type='number'].valid {
+	border-color: green;
+}
+
+input[type='email'].error,
+input[type='password'].error,
+input[type='text'].error,
+input[type='number'].error {
+	border-color: red;
+}
+
+.msg-error {
+	color: red;
+	display: none;
+}
+
+.msg-error.show {
+	display: block;
 }
